@@ -1,0 +1,20 @@
+---
+
+- name: install httpd
+  yum: >
+    name=httpd
+    state=installed
+
+# - name: configure httpd
+  # template: >
+    # src=templates/httpd.conf
+    # dest=/etc/httpd/httpd.conf
+    # owner=root
+    # group=root
+    # mode=0600
+# 
+- name: ensure httpd is running
+  service: >
+    name=httpd
+    state=started
+    enabled=yes
