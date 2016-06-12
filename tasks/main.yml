@@ -5,3 +5,7 @@
 
 - name: include installation tasks
   include: install.yml
+
+- name: include logrotate partial configuration tasks
+  include: logrotate.yml
+  tags: ['logrotate']

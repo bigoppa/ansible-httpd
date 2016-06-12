@@ -1,5 +1,13 @@
 ---
 
+- name: create logs directory
+  file: >
+    path={{ httpd_logs_dir }}
+    owner=root
+    group=root
+    mode=0700
+    state=directory
+
 - name: install apache
   package: >
     name={{ item }}

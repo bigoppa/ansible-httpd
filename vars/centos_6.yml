@@ -1,5 +1,7 @@
 ---
 
+httpd_postrotate_cmd: "/sbin/service httpd restart > /dev/null 2>&1 || true"
+
 httpd_packages: ['httpd']
 
 httpd_service: httpd

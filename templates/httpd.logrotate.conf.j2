@@ -1,0 +1,11 @@
+{{ ansible_managed | comment }}
+
+/var/log/httpd/*log {
+	missingok
+	notifempty
+	sharedscripts
+	delaycompress
+	postrotate
+		{{ httpd_postrotate_cmd }}
+	endscript
+}

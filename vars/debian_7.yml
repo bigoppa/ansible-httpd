@@ -1,5 +1,7 @@
 ---
 
+httpd_postrotate_cmd: "/etc/init.d/apache2 restart > /dev/null 2>&1 || true"
+
 httpd_packages: ['apache2']
 
 httpd_service: apache2
