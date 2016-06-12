@@ -1,0 +1,5 @@
+---
+
+httpd_packages: ['apache2']
+
+httpd_service: apache2

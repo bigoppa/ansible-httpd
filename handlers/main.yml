@@ -1,11 +1,11 @@
 ---
 
-- name: reload httpd
+- name: reload apache
   service: >
-    name=httpd
+    name={{ httpd_service }}
     state=reloaded
 
-- name: restart httpd
+- name: restart apache
   service: >
-    name=httpd
+    name={{ httpd_service }}
     state=restarted

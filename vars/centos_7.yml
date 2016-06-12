@@ -1,0 +1,5 @@
+---
+
+httpd_packages: ['httpd']
+
+httpd_service: httpd
