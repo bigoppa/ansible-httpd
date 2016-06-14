@@ -5,3 +5,7 @@ httpd_postrotate_cmd: "/sbin/service httpd restart > /dev/null 2>&1 || true"
 httpd_packages: ['httpd']
 
 httpd_service: httpd
+
+httpd_log_dir: /var/log/httpd
+
+httpd_config_dir: /etc/httpd/conf.d

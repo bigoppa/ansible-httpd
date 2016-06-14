@@ -1,0 +1,12 @@
+---
+
+- name: configure apache virtual hosts
+  template: >
+    src=templates/vhost.conf.j2
+    dest={{ httpd_config_dir }}/{{ item.server_name }}.conf
+    owner=root
+    group=root
+    mode=0644
+
+  with_items: "{{ httpd_virtual_hosts }}"
+  notify: ["restart apache"]

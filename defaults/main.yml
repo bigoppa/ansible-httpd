@@ -1,2 +1,18 @@
 ---
-# defaults file for ansible-httpd
+
+httpd_listen_address: 192.168.0.1
+
+httpd_listen_port: 80
+
+httpd_sites_dir: /var/www
+
+httpd_virtual_hosts:
+  - server_name: "example.com"
+    # server_alias: "www.example.com"
+    # document_root: "/var/www/html"
+    # ssl_ca_path: /etc/ssl/certs
+    # ssl_ca_cert: /etc/ssl/certs/example.com/fullchain.pem
+    # ssl_cert: /etc/ssl/certs/example.com/cert.pem
+    # ssl_key: /etc/ssl/certs/example.com/key.pem
+    # ssl_chain: /etc/ssl/certs/example.com/chain.pem
+    # extra_params: []

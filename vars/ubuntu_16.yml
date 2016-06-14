@@ -5,3 +5,7 @@ httpd_postrotate_cmd: "/bin/systemctl restart apache2.service > /dev/null 2>&1 |
 httpd_packages: ['apache2']
 
 httpd_service: apache2
+
+httpd_log_dir: /var/log/apache2
+
+httpd_config_dir: /etc/apache2/conf-enabled

@@ -1,0 +1,51 @@
+{{ ansible_managed | comment }}
+
+<VirtualHost {{ httpd_listen_address }}:{{ httpd_listen_port }}>
+	ServerName {{ item.server_name }}
+
+	{% if item.error_log is defined %}
+	ErrorLog {{ item.error_log }}
+	{% endif %}
+
+	{% if item.log_level is defined %}
+	LogLevel {{ item.log_level }}
+	{% endif %}
+
+	{% if item.server_admin is defined %}
+	ServerAdmin {{ item.server_admin }}
+	{% endif %}
+
+	{% if item.server_alias is defined %}
+	ServerAlias {{ item.server_alias }}
+	{% endif %}
+
+	{% if item.ssl_cert is defined %}
+		SSLEngine on
+		SSLCertificateFile {{ item.ssl_cert }}
+		SSLCertificateKeyFile {{ item.ssl_key }}
+		SSLCertificateChainFile {{ item.ssl_chain }}
+
+		{% if item.ssl_ca_path is defined %}
+		SSLCACertificatePath /etc/ssl/certs {{ item.ssl_ca_path }}
+		{% endif %}
+
+		{% if item.ssl_ca_cert is defined %}
+		SSLCACertificateFile {{ item.ssl_ca_cert }}
+		{% endif %}
+	{% endif %}
+
+	{% if item.document_root is defined %}
+	DocumentRoot {{ item.document_root }}
+
+	<Directory "{{ item.document_root }}">
+		AllowOverride All
+		Options -Indexes +FollowSymLinks
+		Order allow,deny
+		Allow from all
+	</Directory>
+	{% endif %}
+
+	{% if item.extra_params is defined %}
+	{{ item.extra_params }}
+	{% endif %}
+</VirtualHost>

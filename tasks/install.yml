@@ -2,7 +2,7 @@
 
 - name: create logs directory
   file: >
-    path={{ httpd_logs_dir }}
+    path={{ httpd_log_dir }}
     owner=root
     group=root
     mode=0700
