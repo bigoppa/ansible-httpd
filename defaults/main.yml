@@ -4,7 +4,7 @@ httpd_listen_address: 192.168.0.1
 
 httpd_listen_port: 80
 
-httpd_sites_dir: /var/www
+httpd_sites_dir: /var/www/sites
 
 httpd_virtual_hosts:
   - server_name: "example.com"

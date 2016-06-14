@@ -1,5 +1,15 @@
 ---
 
+- name: ensure sites directory exists
+  file: >
+    path={{ httpd_sites_dir }}
+    owner={{ httpd_user | default("apache") }}
+    group={{ httpd_group | default("apache") }}
+    mode=0755
+    state=directory
+
+  when: httpd_sites_dir is defined
+
 - name: configure apache virtual hosts
   template: >
     src=templates/vhost.conf.j2
