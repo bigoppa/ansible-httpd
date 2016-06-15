@@ -6,13 +6,14 @@ httpd_listen_port: 80
 
 httpd_sites_dir: /var/www/sites
 
-httpd_virtual_hosts:
-  - server_name: "example.com"
-    # server_alias: "www.example.com"
-    # document_root: "/var/www/html"
-    # ssl_ca_path: /etc/ssl/certs
-    # ssl_ca_cert: /etc/ssl/certs/example.com/fullchain.pem
-    # ssl_cert: /etc/ssl/certs/example.com/cert.pem
-    # ssl_key: /etc/ssl/certs/example.com/key.pem
-    # ssl_chain: /etc/ssl/certs/example.com/chain.pem
-    # extra_params: []
+httpd_virtual_hosts: []
+
+# - server_name: "example.com"
+#   server_alias: "www.example.com"
+#   document_root: "/var/www/html"
+#   ssl_ca_path: /etc/ssl/certs
+#   ssl_ca_cert: /etc/ssl/certs/example.com/fullchain.pem
+#   ssl_cert: /etc/ssl/certs/example.com/cert.pem
+#   ssl_key: /etc/ssl/certs/example.com/key.pem
+#   ssl_chain: /etc/ssl/certs/example.com/chain.pem
+#   extra_params: []
