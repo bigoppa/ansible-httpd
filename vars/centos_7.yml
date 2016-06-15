@@ -2,7 +2,7 @@
 
 httpd_postrotate_cmd: "/bin/systemctl restart httpd.service > /dev/null 2>&1 || true"
 
-httpd_packages: ['httpd']
+httpd_packages: ["httpd", "mod_ssl"]
 
 httpd_service: httpd
 
